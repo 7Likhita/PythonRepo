@@ -1,0 +1,19 @@
+from datetime import datetime, timedelta
+
+def show_time(city, offset):
+    now_utc = datetime.utcnow()
+    hours = int(offset)
+    minutes = int((offset - hours) * 60)
+    local_time = now_utc + timedelta(hours=hours, minutes=minutes)
+    print(f"{city:<12}: {local_time.strftime('%H:%M')}")
+
+show_time("San Francisco", -7)
+show_time("New York", -4)
+show_time("UTC", 0)
+show_time("London", 1)
+show_time("Dubai", 4)
+show_time("Bangalore", 5.5)
+show_time("Singapore", 8)
+show_time("Tokyo", 9)
+show_time("Sydney", 10)
+show_time("Wellington", 12)
